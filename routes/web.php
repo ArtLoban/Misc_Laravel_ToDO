@@ -16,4 +16,11 @@
 
 Route::resource('tasks', 'TasksController');
 
+Route::get('/', 'InfoController@index')->name('index');
+
+Route::get('about', 'InfoController@about')->name('about');
+
+Route::get('contact', 'InfoController@contact')->name('contact');
+
+
 

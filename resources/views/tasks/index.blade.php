@@ -3,8 +3,11 @@
 @section('content')
    
 <div class="container">
-    <h3>My tasks</h3>
-    <a href="{{ route('tasks.create')}}" class="btn btn-success">Create</a>
+    <div class="head-title">
+        <h3>Task List</h3>
+    </div>
+
+    <a href="{{ route('tasks.create')}}" class="btn btn-success">Create New</a>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <table class="table">
