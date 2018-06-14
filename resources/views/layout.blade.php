@@ -7,7 +7,7 @@
         
         <title>toDo</title>
         <link rel="stylesheet" href="{{ asset('/css/front.css') }}"/>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,500&amp;subset=cyrillic" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/css/main.css') }}"/>
 
     </head>
@@ -43,8 +43,10 @@
         @yield('content')
 
         <footer class="footer">
-            <div class="container text-uppercase">
-                <p>© UNTITLED. ALL RIGHTS RESERVED. | PHOTOS BY <span class="footer-text">FOTOGRPH</span> | DESIGN BY <span class="footer-text">TEMPLATED</span></p>
+            <div class="container">
+                <div class="footer-content">
+                    <p><span class="smile">&#x263a;</span> just have fun &#160; | &#160; photo from <span class="footer-text">yandex</span> &#160; | &#160; made by <span class="footer-text">ArtLoban</span></p>
+                </div>
             </div>
         </footer>
 

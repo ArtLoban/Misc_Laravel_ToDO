@@ -25,15 +25,13 @@ class createTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:255',
         ];
     }
     
     public function messages() {
         return [
-            'title.required' => 'А ну-ка заполни тут title!',
-            'description.required' => 'А ну-ка заполни message!',
+            'title.required' => 'Field Title is required!'
         ];
     }
 

@@ -14,8 +14,9 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        
-        $tasks = Task::all();
+
+//        $tasks = Task::all();
+        $tasks = Task::orderBy('created_at', 'desc')->get();
         return view('tasks.index', ['tasks' => $tasks]);
     }
     
@@ -83,8 +84,7 @@ class TasksController extends Controller
     public function update(Request $request, $id){
         
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:255'
         ]);
         
         $myTask = Task::find($id);
@@ -105,7 +105,7 @@ class TasksController extends Controller
     public function show($id){
         
         $myTask = Task::find($id);
-        
+
         return view('tasks.show', ['task' => $myTask]); 
     }
     
@@ -116,10 +116,15 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id){
-        
+
         Task::find($id)->delete();
-        
+
         return redirect()->route('tasks.index');
     }
-    
+
+    public function indexCompleted(){
+
+//        return redirect()->route('tasks.index');
+        echo 'Тут будут распологаться уже выполненые дела в списке <br> И тут я их буду удалять совсем';
+    }
 }

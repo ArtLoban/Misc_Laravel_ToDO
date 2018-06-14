@@ -25,6 +25,11 @@ form button i{
   color: #337ab7;
 }
 
+.my-btn{
+  margin-bottom: 30px;
+}
+
+/* ### HEADER ### */
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
 .navbar-inverse .navbar-nav>.active>a:hover{
@@ -39,8 +44,7 @@ form button i{
 .navbar{
   font-size: 14px;
   font-weight: 300;
-  color: #FFF
-
+  color: #FFF;
   border-color: black;
   box-shadow: 0 0 1px rgba(43, 43, 43, .5);
 }
@@ -60,7 +64,42 @@ form button i{
   text-align: center;
 }
 
-/*For Contacts*/
+/* ### CONTENT ### */
+
+.table td:not(.task-title){
+  text-align: center;
+}
+
+.task-title a{
+  text-decoration: none;
+}
+
+table td:not(:nth-of-type(2)){
+  width: 25px;
+}
+
+.task-title a{
+  padding-left: 25px;
+}
+
+table td:nth-of-type(2){
+  max-width: 100px;
+}
+
+.task-item-title{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 30px 10px 15px;
+}
+
+.created_at{
+  color: #8ca79c;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 30px 0px 15px;
+}
+
+/* ### Contacts ### */
 
 .map-frame{
   border: 4px solid rgb(204, 204, 204);
@@ -152,13 +191,21 @@ form button i{
   color: rgba(255,255,255,0.3);
   font-size: 12px;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .footer-text{
   color: rgba(255,255,255,0.6);
 }
 
+.footer-content{
+  text-align: center;
+  margin-top: 40px;
+}
 
+.smile{
+  font-size: 15px;
+}
 
 /* ### MEDIA ### */
 

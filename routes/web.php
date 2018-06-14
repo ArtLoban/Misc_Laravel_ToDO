@@ -14,6 +14,8 @@
 //
 //Route::delete('tasks/{id}/destroy', 'TasksController@destroy')->name('tasks.destroy');
 
+Route::get('tasks/completed', 'TasksController@indexCompleted')->name('tasks.completed');
+
 Route::resource('tasks', 'TasksController');
 
 Route::get('/', 'InfoController@index')->name('index');
