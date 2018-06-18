@@ -29,6 +29,10 @@ form button i{
   margin-bottom: 30px;
 }
 
+.my-btn.compl{
+  padding-left: 15px;
+}
+
 /* ### HEADER ### */
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
@@ -96,7 +100,7 @@ table td:nth-of-type(2){
   color: #8ca79c;
   font-size: 12px;
   font-weight: 300;
-  margin: 30px 0px 15px;
+  margin: 50px 0px 30px;
 }
 
 /* ### Contacts ### */

@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-1">
-            <a href="{{ route('tasks.index')}}" class="btn btn-success">< Back</a>
+            <a href="{{ url()->previous() }}" class="btn btn-success">< Back</a>
         </div>
     </div>
     

@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="title" value="{{$task->title}}">
                         <br>
-                        <textarea name="description" id="" cols="30" rows="10" class="form-control"> {{$task->description}} </textarea>
+                        <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Description">{{$task->description}}</textarea>
                         <br>
                         <button class="btn btn-warning">Submit</button>
                     </div>

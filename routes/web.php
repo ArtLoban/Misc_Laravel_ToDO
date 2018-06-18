@@ -16,7 +16,10 @@
 
 Route::get('tasks/completed', 'TasksController@indexCompleted')->name('tasks.completed');
 
+Route::put('tasks/{id}/complete', 'TasksController@completeTask')->name('task.complete');;
+
 Route::resource('tasks', 'TasksController');
+
 
 Route::get('/', 'InfoController@index')->name('index');
 

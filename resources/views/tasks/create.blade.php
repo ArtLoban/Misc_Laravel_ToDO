@@ -11,6 +11,7 @@
             @include('errors')
 
             <div class="row">
+
                 {!! Form::open(['route' => 'tasks.store']) !!}
                     <div class="col-md-10">
                         <div class="form-group">

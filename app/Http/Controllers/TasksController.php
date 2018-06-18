@@ -15,8 +15,13 @@ class TasksController extends Controller
      */
     public function index() {
 
-//        $tasks = Task::all();
-        $tasks = Task::orderBy('created_at', 'desc')->get();
+//        $tasks = Task::all(); // Получение всех записей
+//        $tasks = Task::orderBy('created_at', 'desc')->get(); // Получение всех записей отсортированных
+
+        $tasks = Task::where('is_completed', 0)
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(10);
+
         return view('tasks.index', ['tasks' => $tasks]);
     }
     
@@ -119,12 +124,34 @@ class TasksController extends Controller
 
         Task::find($id)->delete();
 
-        return redirect()->route('tasks.index');
+        return redirect()->back();
+//        return redirect()->route('tasks.index');
     }
 
+
+    /**
+     * Mark task as completed
+     *
+     */
+    public function completeTask($id){
+
+        Task::where('id', $id)
+            ->update(['is_completed' => 1]);
+
+        return redirect()->back();
+    }
+
+
+    /**
+     * Display a list of the completed tasks.
+     *
+     */
     public function indexCompleted(){
 
-//        return redirect()->route('tasks.index');
-        echo 'Тут будут распологаться уже выполненые дела в списке <br> И тут я их буду удалять совсем';
+        $tasks = Task::where('is_completed', 1)
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(10);
+
+        return view('tasks.indexCompleted', ['tasks' => $tasks]);
     }
 }
