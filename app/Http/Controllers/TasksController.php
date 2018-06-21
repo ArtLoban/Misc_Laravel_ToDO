@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\createTaskRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Task;
 
 class TasksController extends Controller
@@ -19,6 +20,7 @@ class TasksController extends Controller
 //        $tasks = Task::orderBy('created_at', 'desc')->get(); // Получение всех записей отсортированных
 
         $tasks = Task::where('is_completed', 0)
+            ->where('user_id', Auth::user()->id)
             ->orderBy('created_at', 'desc')
             ->simplePaginate(10);
 
@@ -60,8 +62,10 @@ class TasksController extends Controller
 //            'title' => 'required',
 //            'description' => 'required',
 //        ]);                                 // Вывести ошибки отдельно в виде
-        
-        Task::create($request->all());  // А это запись 3-й вариант.  Заменяет собой две верхние
+        $task->user_id = Auth::user()->id;
+        $task->fill($request->all());
+        $task->save();
+//        Task::create($request->all());  // А это запись 3-й вариант.  Заменяет собой две верхние
       
         return redirect()->route('tasks.index');
     }
@@ -89,7 +93,7 @@ class TasksController extends Controller
     public function update(Request $request, $id){
         
         $this->validate($request, [
-            'title' => 'required|max:255'
+            'title' => 'required|max:191'
         ]);
         
         $myTask = Task::find($id);
@@ -149,6 +153,7 @@ class TasksController extends Controller
     public function indexCompleted(){
 
         $tasks = Task::where('is_completed', 1)
+            ->where('user_id', Auth::user()->id)
             ->orderBy('created_at', 'desc')
             ->simplePaginate(10);
 

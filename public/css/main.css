@@ -110,6 +110,11 @@ table td:nth-of-type(2){
   margin: 50px 0px 30px;
 }
 
+.no-tasks{
+  color: #8dc63f;
+  margin-top: 70px;
+}
+
 /* ### Contacts ### */
 
 .map-frame{

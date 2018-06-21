@@ -42,6 +42,13 @@
                     @endforeach
                     </tbody>
                 </table>
+
+                @if($tasks->isEmpty())
+                    <div class="no-tasks text-center">
+                        <p>... nothing here</p>
+                    </div>
+                @endif
+
                 <div>
                     {{ $tasks->links() }}
                 </div>
