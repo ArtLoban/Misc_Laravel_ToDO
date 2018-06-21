@@ -14,11 +14,15 @@
 //
 //Route::delete('tasks/{id}/destroy', 'TasksController@destroy')->name('tasks.destroy');
 
-Route::get('tasks/completed', 'TasksController@indexCompleted')->name('tasks.completed');
+Route::get('tasks/completed', 'TasksController@indexCompleted')
+    ->middleware('auth')
+    ->name('tasks.completed');
 
-Route::put('tasks/{id}/complete', 'TasksController@completeTask')->name('task.complete');;
+Route::put('tasks/{id}/complete', 'TasksController@completeTask')
+    ->middleware('auth')
+    ->name('task.complete');
 
-Route::resource('tasks', 'TasksController');
+Route::resource('tasks', 'TasksController', ['middleware' => ['auth_tasks']]);
 
 
 Route::get('/', 'InfoController@index')->name('index');
@@ -27,5 +31,11 @@ Route::get('about', 'InfoController@about')->name('about');
 
 Route::get('contact', 'InfoController@contact')->name('contact');
 
+Route::get('oops', function(){
+    return view('oops');
+});
 
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 

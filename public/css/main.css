@@ -36,7 +36,10 @@ form button i{
 /* ### HEADER ### */
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
-.navbar-inverse .navbar-nav>.active>a:hover{
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover {
   color: #8dc63f;
   background-color: inherit;
 }
@@ -66,6 +69,10 @@ form button i{
 .head-title {
   padding: 30px 15px;
   text-align: center;
+}
+
+.my-username{
+  text-transform: none;
 }
 
 /* ### CONTENT ### */
@@ -180,6 +187,11 @@ table td:nth-of-type(2){
   font-size: 30px;
 }
 
+/* ### LOGIN/LOGOUT FIELDS ###*/
+
+.panel.panel-default{
+  margin-top: 50px;
+}
 
 /* ### FOOTER ### */
 
