@@ -33,7 +33,7 @@
                             <td>
                                 {!! Form::open(['method' => 'DELETE',
                                      'route' => ['tasks.destroy',$task->id]]) !!}
-                                <button onclick="return confirm('Удалить запись?')">
+                                <button onclick="return confirm('Are you sure?')">
                                     <i class="glyphicon glyphicon-remove"></i>
                                 </button>
                                 {!! Form::close() !!}

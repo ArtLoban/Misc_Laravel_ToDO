@@ -43,7 +43,7 @@
                         </td>
                         <td>
                             {!! Form::open(['route' => ['task.complete', $task->id],'method' => 'PUT']) !!}
-                            <button onclick="return confirm('Переместить запись в выполненные?')">
+                            <button onclick="return confirm('Are you sure?')">
                                 <i class="glyphicon glyphicon-ok"></i>
                             </button>
                             {!! Form::close() !!}
