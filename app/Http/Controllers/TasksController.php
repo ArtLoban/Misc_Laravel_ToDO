@@ -44,29 +44,13 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(createTaskRequest $request) {
-        
-//        dd($request->all()); // Возвращает массив все поля из формы
-//        dd($request->only('title')); // Только это указанное поле
-//        dd($request->except('title')); // Все кроме этого указанного
-//        dd($request->get('title')); // Возвращает значение указаного поля
-        
+
         $task = new Task();
-//        $task->title = $request->get('title');  // Как вариант получения значения поля
-//        $task->description = $request->get('description'); // Как вариант получения значения поля
-                
-//        $task->fill($request->all()); // Заменяет верхние два благодаря записи в модели protected $fillable = ['title', 'description']; 
-//        $task->save(); // Сохранение атрибутов (значений полей) в БД
-        
-        
-//         $this->validate($request, [
-//            'title' => 'required',
-//            'description' => 'required',
-//        ]);                                 // Вывести ошибки отдельно в виде
+
         $task->user_id = Auth::user()->id;
         $task->fill($request->all());
         $task->save();
-//        Task::create($request->all());  // А это запись 3-й вариант.  Заменяет собой две верхние
-      
+
         return redirect()->route('tasks.index');
     }
     
